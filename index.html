@@ -6,171 +6,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wedding Post - Enrique & Sdenka</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <meta property="og:image" content="./assets/4533.jpg">
+    <meta property="og:image" content="./assets/IMG_4533.jpg">
+    <title>Nuestra Boda Sdenka y Enrique</title>
+    <style>
+        /* Ocultar el contenido principal al cargar */
+        #content {
+            display: none;
+        }
+
+        /* Estilo del contenedor del loader */
+        #loader {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            /* Cambia el color si es necesario */
+            z-index: 9999;
+        }
+        .loader1 {
+            margin-top: -120px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="newspaper">
-        <div class="header">
-            <h1 class="masthead">The Wedding Post</h1>
+
+    <div id="loader">
+        <div>
+        <h1 class="masthead">Sdenka y Enrique</h1>
+        </div>
+        <div class="loader1">
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+                type="module"></script>
+            <dotlottie-player src="https://lottie.host/fb58e867-1038-4902-88cc-c310429ddcc7/Rutr8s7g3s.lottie"
+                background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay>
+            </dotlottie-player>
+        </div>
+    </div>
+    <div id="content">
+        <div class="newspaper">
+            <div class="header">
+                <h1 class="masthead">The Wedding Post</h1>
+                <div class="divider1"></div>
+                <div class="subheader">
+                    <span>LA PAZ, BOLIVIA</span>
+                    <span>SÁBADO, 10 DE MAYO, 2025</span>
+                    <span>12:00 PM</span>
+                </div>
+            </div>
+
+            <div class="main-headline">ESTÁS INVITADO</div>
             <div class="divider1"></div>
-            <div class="subheader">
-                <span>LA PAZ, BOLIVIA</span>
-                <span>SÁBADO, 10 DE MAYO, 2025</span>
-                <span>12:00 PM</span>
+            <div class="subheadline">ENRIQUE & SDENKA</div>
+            <div class="subheadline">¡SE VAN A CASAR!</div>
+
+            <div class="byline">Acompáñanos en la celebración del amor</div>
+
+            <div class="divider"></div>
+
+            <div class="photo">
+                <img src="./assets/IMG_4533.JPG" alt="Enrique y Sdenka">
             </div>
-        </div>
-
-        <div class="main-headline">ESTÁS INVITADO</div>
-        <div class="divider1"></div>
-        <div class="subheadline">ENRIQUE & SDENKA</div>
-        <div class="subheadline">¡SE VAN A CASAR!</div>
-
-        <div class="byline">Acompáñanos en la celebración del amor</div>
-
-        <div class="divider"></div>
-
-        <div class="photo">
-            <img src="./assets/IMG_4533.JPG" alt="Enrique y Sdenka">
-        </div>
-        <div class="countdown-section">
-            <div class="section-title countdown-title">CUENTA REGRESIVA</div>
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span id="days" class="countdown-value">00</span>
-                    <span class="countdown-label">Días</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours" class="countdown-value">00</span>
-                    <span class="countdown-label">Horas</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes" class="countdown-value">00</span>
-                    <span class="countdown-label">Minutos</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds" class="countdown-value">00</span>
-                    <span class="countdown-label">Segundos</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="parents">
-            <div class="newspaper-section">
-                CON LA BENDICION DE NUESTROS PADRES<br><br>
-            </div>
-            <div class="parents-group">
-                <strong>Padres del novio:</strong><br>
-                Bernardino Gutiérrez & Mónica Ramírez
-            </div>
-            <div class="parents-group">
-                <strong>Padres de la novia:</strong><br>
-                René Quiroz & María Esther Antezana ✞
-            </div>
-        </div>
-
-        <div class="quote">
-            "Nos cruzamos en el camino de la vida de forma inesperada, como si el destino nos hubiera reunido en el
-            momento preciso. Con cada encuentro, el amor creció profundo y silencioso, como una flor que se abre con el
-            tiempo. Hoy llegó el momento de decirnos ¡Sí, quiero!, un compromiso que une no solo nuestros cuerpos, sino
-            también nuestras almas para caminar juntos en este viaje de la vida."
-        </div>
-
-        <div class="content">
-            <div class="left-column">
-                <div class="divider"></div>
-                <div class="photo">
-                    <img src="./assets/IMG_4546.JPG" alt="Enrique y Sdenka">
-                </div>
-                <div class="divider"></div>
-                <div class="section-title">LUGAR DE LA BODA</div>
-                <p>
-                    <strong>Club de Golf</strong><br>
-                    La Paz, Bolivia
-                </p>
-
-                <div class="section-title" style="margin-top: 20px;">HORARIOS</div>
-                <div class="schedule">
-                    <div class="schedule-item">
-                        <span>Ceremonia religiosa</span>
-                        <span>12:00 pm</span>
+            <div class="countdown-section">
+                <div class="section-title countdown-title">CUENTA REGRESIVA</div>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-value">00</span>
+                        <span class="countdown-label">Días</span>
                     </div>
-                    <div class="schedule-item">
-                        <span>Cóctel de bienvenida</span>
-                        <span>14:00 pm</span>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-value">00</span>
+                        <span class="countdown-label">Horas</span>
                     </div>
-                    <div class="schedule-item">
-                        <span>Boda civil</span>
-                        <span>15:00 pm</span>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-value">00</span>
+                        <span class="countdown-label">Minutos</span>
                     </div>
-                    <div class="schedule-item">
-                        <span>Sesión de fotos novios</span>
-                        <span>16:00 pm</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Acto principal - Baile de novios</span>
-                        <span>18:00 pm</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Cena</span>
-                        <span>19:30 pm</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Fiesta</span>
-                        <span>20:00 pm</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Pastel, buquet y liga</span>
-                        <span>22:00 pm</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Continúa la fiesta</span>
-                        <span>22:30 pm</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Fin de fiesta</span>
-                        <span>01:30 am</span>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-value">00</span>
+                        <span class="countdown-label">Segundos</span>
                     </div>
                 </div>
             </div>
 
-            <div class="right-column">
-                <div class="section-title">LOS NOVIOS</div>
-                <p>
-                    <strong>Enrique Antonio Gutiérrez Ramírez</strong><br>
-                    &<br>
-                    <strong>Sdenka Alexandra Quiroz Antezana</strong>
-                </p>
-
-                <p>
-                    Junto con sus familias, desean celebrar este día tan especial con ustedes. La fecha señalada será
-                    el:
-                </p>
-                <p style="text-align: center; font-weight: bold; font-size: 18px;">
-                    10 de Mayo, 2025
-                </p>
-
-                <div class="divider"></div>
-                <div class="photo">
-                    <img src="./assets/IMG_4551.JPG" alt="Enrique y Sdenka">
+            <div class="parents">
+                <div class="newspaper-section">
+                    ❤ CON LA BENDICION DE NUESTROS PADRES ❤<br><br>
                 </div>
-                <div class="divider"></div>
-
-                <div class="dress-code">
-                    <strong>Vestimenta:</strong> Evitar colores claros y rojo.
+                <div class="parents-group">
+                    <strong>Padres del novio:</strong><br>
+                    Bernardino Gutiérrez & Mónica Ramírez
+                </div>
+                <div class="parents-group">
+                    <strong>Padres de la novia:</strong><br>
+                    René Quiroz & María Esther Antezana ✞
                 </div>
             </div>
-        </div>
 
-        <div class="footer">
-            ¡LOS ESPERAMOS PARA CELEBRAR NUESTRO AMOR!
-        </div>
+            <div class="quote">
+                "Nos cruzamos en el camino de la vida de forma inesperada, como si el destino nos hubiera reunido en el
+                momento preciso. Con cada encuentro, el amor creció profundo y silencioso, como una flor que se abre con
+                el
+                tiempo. Hoy llegó el momento de decirnos ¡Sí, quiero!, un compromiso que une no solo nuestros cuerpos,
+                sino
+                también nuestras almas para caminar juntos en este viaje de la vida."
+            </div>
 
-        <div class="header">
-            <h1 class="masthead">Confirma tu asistencia</h1>
-            <div class="divider1"></div>
+            <div class="content">
+                <div class="left-column">
+                    <div class="divider"></div>
+                    <div class="photo">
+                        <img src="./assets/IMG_4546.JPG" alt="Enrique y Sdenka">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="section-title">LUGAR DE LA BODA ❤</div>
+                    <p>
+                        <strong>Club de Golf</strong><br>
+                        La Paz, Bolivia
+                    </p>
+
+                    <div class="section-title" style="margin-top: 20px;">HORARIOS ❤</div>
+                    <div class="schedule">
+                        <div class="schedule-item">
+                            <span>Ceremonia religiosa</span>
+                            <span>12:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Cóctel de bienvenida</span>
+                            <span>14:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Boda civil</span>
+                            <span>15:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Sesión de fotos novios</span>
+                            <span>16:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Acto principal - Baile de novios</span>
+                            <span>18:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Cena</span>
+                            <span>19:30 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Fiesta</span>
+                            <span>20:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Pastel, buquet y liga</span>
+                            <span>22:00 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Continúa la fiesta</span>
+                            <span>22:30 pm</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Fin de fiesta</span>
+                            <span>01:30 am</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="section-title">LOS NOVIOS ❤</div>
+                    <p>
+                        <strong>Enrique Antonio Gutiérrez Ramírez</strong><br>
+                        &<br>
+                        <strong>Sdenka Alexandra Quiroz Antezana</strong>
+                    </p>
+
+                    <p>
+                        Junto con sus familias, desean celebrar este día tan especial con ustedes. La fecha señalada
+                        será
+                        el:
+                    </p>
+                    <p style="text-align: center; font-weight: bold; font-size: 18px;">
+                        10 de Mayo, 2025
+                    </p>
+
+                    <div class="divider"></div>
+                    <div class="photo">
+                        <img src="./assets/IMG_4551.JPG" alt="Enrique y Sdenka">
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="dress-code">
+                        <strong>Vestimenta:</strong> Evitar colores claros y rojo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                ¡LOS ESPERAMOS PARA CELEBRAR NUESTRO AMOR!
+            </div>
+
+            <div class="header">
+                <h1 class="masthead">Confirma tu asistencia</h1>
+                <div class="divider1"></div>
                 <span>Nota: Invitación personal, sin niños.</span>
             </div>
         </div>
@@ -444,6 +488,18 @@
         <p class="footnumber">Invitaciones virtuales <br> <br>+591 79720134</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            // Mantén el loader visible durante un tiempo fijo
+            setTimeout(function () {
+                // Oculta el loader
+                document.getElementById('loader').style.display = 'none';
+                // Muestra el contenido principal
+                document.getElementById('content').style.display = 'block';
+            }, 6000); // 3000 milisegundos = 3 segundos
+        });
+    </script>
+    </div>
 </body>
 
 </html>
