@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&display=swap");
 @font-face {
     font-family: 'OldEnglishTextMT';
-    src: url('OldEnglishTextMT.ttf') format('truetype');
+    src: url('./oldenglishtextmt.ttf') format('truetype');
 }
 
 body {
