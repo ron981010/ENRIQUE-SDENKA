@@ -155,7 +155,7 @@
                         <div class="photo">
                             <img src="./assets/CRONOGRAMA.jpg" alt="Enrique y Sdenka">
                         </div>
-                         <!-- <div class="schedule-item">
+                        <!-- <div class="schedule-item">
                             <span>Ceremonia religiosa</span>
                             <span>12:00 pm</span>
                         </div>
@@ -259,8 +259,74 @@
                     <img src="./assets/acept.png" alt="Enrique y Sdenka" style="max-height:150px">
                 </div>
                 <div class="divider1"></div>
-                <span class="footer">Nota: Invitación personal, sin niños.</span>
+                <span class="footer">Nota: Invitación según la cantidad de pases asignados, sin niños</span>
             </div>
+            <div class="personal">
+                <div class="section-title" id="passes-title">Pase</div>
+                <h1 class="masthead" id="name"></h1>
+                <div class="footer">
+                    Tenemos Reservado
+                </div>
+                <p id="passnumbers">1</p>
+                <div class="footer" id="places-text">
+                    Lugar
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Obtener información de la URL
+                    const urlParams = window.location.search;
+
+                    if (urlParams) {
+                        // Quitar el '?' del inicio
+                        const paramsString = urlParams.substring(1);
+
+                        // Decodificar los parámetros de la URL
+                        const decodedParams = decodeURIComponent(paramsString);
+
+                        // Dividir por guiones
+                        const parts = decodedParams.split('-');
+
+                        // Si hay suficientes partes (nombre, apellido, número)
+                        if (parts.length >= 3) {
+                            const firstName = parts[0];
+                            const lastName = parts[1];
+                            const numPasses = parts[2];
+
+                            // Actualizar el contenido de la página
+                            document.getElementById('name').textContent = `${firstName} ${lastName}`;
+                            document.getElementById('passnumbers').textContent = numPasses;
+
+                            // Cambiar singular/plural según el número
+                            if (numPasses === "1") {
+                                document.getElementById('passes-title').textContent = "Pase";
+                                document.getElementById('places-text').textContent = "Lugar";
+                            } else {
+                                document.getElementById('passes-title').textContent = "Pases";
+                                document.getElementById('places-text').textContent = "Lugares";
+                            }
+                        }
+                    }
+                });
+            </script>
+            <style>
+                #passnumbers {
+                    border: 3px solid black;
+                    text-align: center;
+                    padding-inline: 50px;
+                    font-size: 80px;
+                    margin: 35px;
+                    padding-bottom: 25px;
+                }
+
+                .personal {
+                    display: flex;
+                    justify-items: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            </style>
         </div>
 
         <div class="totens">
