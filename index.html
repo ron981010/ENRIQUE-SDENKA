@@ -635,14 +635,17 @@
             left: 0;
             right: 0;
             width: 95%;
-            background: linear-gradient(90deg, #111 0%, #222 100%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
             padding: 7px 0px;
-            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             border-radius: 40px;
             margin: 3%;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
         }
 
         #player-content {
