@@ -244,7 +244,8 @@
                         <div class="photo">
                             <img src="./assets/cat.png" alt="Enrique y Sdenka" style="max-height:150px">
                         </div>
-                        <p style="margin-top: -50px; margin-bottom: 40px;">Traje Formal<br>(Evitar colores claros y rojo.)</p>
+                        <p style="margin-top: -50px; margin-bottom: 40px;">Traje Formal<br>(Evitar colores claros y
+                            rojo.)</p>
                     </div>
                 </div>
             </div>
@@ -263,7 +264,8 @@
             </div>
             <div class="personal" style="margin-top: 50px;">
                 <div class="section-title" id="passes-title">Pase</div>
-                <h1 class="footer" id="name" style="text-align: center; font-size:30px; font-weight: bold; margin-block: -15px;"></h1>
+                <h1 class="footer" id="name"
+                    style="text-align: center; font-size:30px; font-weight: bold; margin-block: -15px;"></h1>
                 <div class="footer" style="margin-bottom:-20px">
                     Tenemos Reservado
                 </div>
@@ -597,6 +599,284 @@
         </div>
         <p class="footnumber">Invitaciones virtuales <br> <br>+591 79720134</p>
     </footer>
+    <!-- HTML -->
+    <div id="music-player-bar">
+        <div id="player-content">
+            <div id="track-info">
+                <div id="track-title">Nuestra Canción</div>
+                <div id="track-controls">
+                    <button id="play-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </button>
+                    <button id="pause-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none">
+                            <line x1="10" y1="4" x2="10" y2="20"></line>
+                            <line x1="18" y1="4" x2="18" y2="20"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="progress-container">
+                <div id="progress-bar">
+                    <div id="progress-current"></div>
+                </div>
+                <div id="time-display">00:00</div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #music-player-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #111 0%, #222 100%);
+            color: #fff;
+            padding: 15px 10px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        #player-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 20px;
+        }
+
+        #track-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #track-title {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-left: 28px;
+        }
+
+        #track-title::before {
+            content: "♪";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        #track-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        #play-btn,
+        #pause-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            stroke-width: 1.5;
+        }
+
+        #play-btn:hover,
+        #pause-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        #play-btn svg,
+        #pause-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* Invertimos la visualización inicial */
+        #play-btn {
+            display: none;
+        }
+
+        #pause-btn {
+            display: flex;
+        }
+
+        #progress-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #progress-current {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
+
+        #time-display {
+            font-size: 14px;
+            font-weight: 300;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        @media (min-width: 768px) {
+            #player-content {
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            #track-info {
+                width: 40%;
+            }
+
+            #progress-container {
+                width: 60%;
+            }
+        }
+    </style>
+
+    <script>
+        // Crear el elemento de audio
+        const audioPlayer = new Audio('./assets/music.mp3');
+        // Configurar para autoplay
+        audioPlayer.autoplay = true;
+        let isPlaying = true;
+
+        // Función para iniciar la reproducción automáticamente
+        function initPlayer() {
+            // Intentar reproducir automáticamente
+            audioPlayer.play().then(() => {
+                // Si se reproduce con éxito
+                isPlaying = true;
+                document.getElementById('play-btn').style.display = 'none';
+                document.getElementById('pause-btn').style.display = 'flex';
+                updateProgress();
+            }).catch(error => {
+                // Si falla el autoplay (políticas de navegador)
+                console.log("Autoplay prevented:", error);
+                isPlaying = false;
+                document.getElementById('play-btn').style.display = 'flex';
+                document.getElementById('pause-btn').style.display = 'none';
+            });
+        }
+
+        // Iniciar cuando la página se carga
+        window.addEventListener('load', initPlayer);
+
+        document.getElementById('play-btn').addEventListener('click', function () {
+            // Reproducir la canción
+            audioPlayer.play();
+            isPlaying = true;
+            document.getElementById('play-btn').style.display = 'none';
+            document.getElementById('pause-btn').style.display = 'flex';
+
+            // Iniciar actualización de progreso
+            updateProgress();
+        });
+
+        document.getElementById('pause-btn').addEventListener('click', function () {
+            // Pausar la canción
+            audioPlayer.pause();
+            isPlaying = false;
+            document.getElementById('pause-btn').style.display = 'none';
+            document.getElementById('play-btn').style.display = 'flex';
+        });
+
+        // Actualizar la barra de progreso y el tiempo
+        function updateProgress() {
+            if (isPlaying) {
+                const progressBar = document.getElementById('progress-current');
+                const timeDisplay = document.getElementById('time-display');
+
+                // Actualizar cada 100ms
+                const progressInterval = setInterval(function () {
+                    if (!isPlaying) {
+                        clearInterval(progressInterval);
+                        return;
+                    }
+
+                    // Calcular porcentaje de progreso
+                    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                    progressBar.style.width = percentage + '%';
+
+                    // Formatear y mostrar tiempo
+                    const minutes = Math.floor(audioPlayer.currentTime / 60);
+                    const seconds = Math.floor(audioPlayer.currentTime % 60);
+                    timeDisplay.textContent =
+                        (minutes < 10 ? '0' + minutes : minutes) + ':' +
+                        (seconds < 10 ? '0' + seconds : seconds);
+
+                    // Si termina la canción
+                    if (audioPlayer.ended) {
+                        // Al terminar, empezar de nuevo
+                        audioPlayer.currentTime = 0;
+                        audioPlayer.play();
+                    }
+                }, 100);
+            }
+        }
+
+        // Permitir clic en la barra de progreso
+        document.getElementById('progress-bar').addEventListener('click', function (e) {
+            const progressBar = document.getElementById('progress-bar');
+            const rect = progressBar.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const width = rect.width;
+            const percentage = (x / width);
+
+            // Actualizar posición de reproducción
+            audioPlayer.currentTime = percentage * audioPlayer.duration;
+
+            // Actualizar visualmente
+            document.getElementById('progress-current').style.width = (percentage * 100) + '%';
+
+            // Actualizar tiempo
+            const minutes = Math.floor(audioPlayer.currentTime / 60);
+            const seconds = Math.floor(audioPlayer.currentTime % 60);
+            document.getElementById('time-display').textContent =
+                (minutes < 10 ? '0' + minutes : minutes) + ':' +
+                (seconds < 10 ? '0' + seconds : seconds);
+        });
+
+        // Actualizar cuando la canción se carga
+        audioPlayer.addEventListener('loadedmetadata', function () {
+            const minutes = Math.floor(audioPlayer.duration / 60);
+            const seconds = Math.floor(audioPlayer.duration % 60);
+            document.getElementById('time-display').textContent =
+                (minutes < 10 ? '0' + minutes : minutes) + ':' +
+                (seconds < 10 ? '0' + seconds : seconds);
+        });
+    </script>
     <script src="script.js"></script>
     <script>
         window.addEventListener('load', function () {
