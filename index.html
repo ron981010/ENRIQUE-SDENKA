@@ -44,6 +44,51 @@
         .loader1 {
             margin-top: -120px;
         }
+
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .event {
+            background-color: #fefefe;
+            border-left: 4px solid #d4af37;
+            margin: 20px 0;
+            padding: 15px 20px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .event::before {
+            content: "⏰";
+            position: absolute;
+            left: -25px;
+            top: 15px;
+            font-size: 18px;
+        }
+
+        .event h3 {
+            margin: 0 0 5px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .event p {
+            margin: 0;
+            color: #555;
+        }
+
+        @media screen and (max-width: 480px) {
+            .event h3 {
+                font-size: 1em;
+            }
+
+            .event p {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 
@@ -69,7 +114,7 @@
                 <div class="subheader">
                     <span>LA PAZ, BOLIVIA</span>
                     <span>SÁBADO, 10 DE MAYO, 2025</span>
-                    <span>12:00 PM</span>
+                    <span>15:00 PM</span>
                 </div>
             </div>
 
@@ -153,8 +198,50 @@
                     <div class="schedule">
 
                         <div class="photo">
-                            <img src="./assets/CRONOGRAMA.jpg" alt="Enrique y Sdenka">
+                            <img src="./assets/CRONOGRAMA.png" alt="Enrique y Sdenka">
                         </div>
+                        <div class="timeline">
+                            <div class="event">
+                                <h3>15:00 - Ceremonia Religiosa ⛪</h3>
+                                <p>Inicio de la ceremonia en la iglesia.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>16:00 - Boda Civil 💍</h3>
+                                <p>Firma legal y ceremonia civil.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>17:00 - Sesión de Fotos 📸</h3>
+                                <p>Fotos profesionales de los novios.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>18:00 - Acto Principal & Baile 💃</h3>
+                                <p>Primer baile y momentos centrales.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>19:00 - Cena 🍽️</h3>
+                                <p>Banquete para los invitados.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>20:00 - Fiesta 🎉</h3>
+                                <p>Inicio de la celebración con música y baile.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>22:00 - Pastel, Ramo & Liga 🎂💐</h3>
+                                <p>Corte del pastel, lanzamiento del ramo y liga.</p>
+                            </div>
+
+                            <div class="event">
+                                <h3>01:30 - Fin de la Fiesta 🚗</h3>
+                                <p>Despedida de los novios y cierre del evento.</p>
+                            </div>
+                        </div>
+
                         <!-- <div class="schedule-item">
                             <span>Ceremonia religiosa</span>
                             <span>12:00 pm</span>
@@ -199,7 +286,8 @@
                 </div>
                 <div class="right-column">
                     <div class="section-title">E y S</div>
-                    <div class="toten3a" style="text-align: center; margin-top: 10px;"><a class="b2" href="album.html" target="_blank">Ver más fotos</a>
+                    <div class="toten3a" style="text-align: center; margin-top: 10px;"><a class="b2" href="album.html"
+                            target="_blank">Ver más fotos</a>
                     </div>
                     <div class="divider"></div>
                     <div class="photo">
@@ -569,7 +657,8 @@
                 <div class="textlet">
                     <p class="textlet1">SDENKA Y ENRIQUE</p>
                 </div>
-                <p class="textlet1">MESA DE REGALOS<br>HOMESTORE<br> Calle A. Borda esquina, Av. Calle Blanco Galindo 151, Cochabamba</p>
+                <p class="textlet1">MESA DE REGALOS<br>HOMESTORE<br> Calle A. Borda esquina, Av. Calle Blanco Galindo
+                    151, Cochabamba</p>
             </div>
         </div>
     </div>
