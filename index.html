@@ -199,9 +199,16 @@
                 </div>
                 <div class="right-column">
                     <div class="section-title">E y S</div>
-                    <div class="toten3a" style="text-align: center; margin-top: 10px;"><a class="b2" href="album.html"
-                            target="_blank">Ver más fotos</a>
+                    <div class="toten3a" style="text-align: center; margin-top: 10px;">
+                        <a class="b2" id="albumLink" target="_blank">Ver más fotos</a>
                     </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const params = window.location.search;
+                            document.getElementById('albumLink').href = 'album.html' + params;
+                        });
+                    </script>
                     <div class="divider"></div>
                     <div class="photo">
                         <img src="./assets/IMG_4534.JPG" alt="Enrique y Sdenka">
