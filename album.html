@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -39,7 +40,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
             cursor: pointer;
         }
@@ -70,7 +71,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
         /* Contenido del Modal */
@@ -85,7 +86,8 @@
         }
 
         /* Botones Anterior/Siguiente */
-        .prev, .next {
+        .prev,
+        .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -99,7 +101,7 @@
             border-radius: 0 3px 3px 0;
             user-select: none;
             -webkit-user-select: none;
-            background-color: rgba(0,0,0,0.3);
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
         .next {
@@ -111,17 +113,18 @@
             left: 0;
         }
 
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         /* Botón cerrar */
         .close {
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
+            top: -39px;
+            right: 10px;
+            font-size: 64px;
+            color: black;
             font-weight: bold;
             transition: 0.3s;
             z-index: 1001;
@@ -147,14 +150,20 @@
         }
 
         /* Animación */
-        .modal-content, .caption {
+        .modal-content,
+        .caption {
             animation-name: zoom;
             animation-duration: 0.6s;
         }
 
         @keyframes zoom {
-            from {transform:scale(0)}
-            to {transform:scale(1)}
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
         }
 
         .toten3a {
@@ -195,7 +204,8 @@
                 width: 90%;
             }
 
-            .prev, .next {
+            .prev,
+            .next {
                 padding: 10px;
                 font-size: 20px;
             }
@@ -222,13 +232,15 @@
                 width: 95%;
             }
 
-            .prev, .next {
+            .prev,
+            .next {
                 padding: 8px;
                 font-size: 18px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="section-title">E y S</div>
     <div class="gallery">
@@ -263,7 +275,7 @@
             <img src="./assets/IMG_4578.JPG">
         </div>
     </div>
-    
+
     <!-- Modal de Galería -->
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
@@ -272,7 +284,7 @@
         <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
         <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
-    
+
     <div class="toten3a">
         <a class="b2" href="index.html">Volver</a>
     </div>
@@ -284,24 +296,24 @@
         const captionText = document.getElementById('caption');
         const closeBtn = document.getElementsByClassName('close')[0];
         const galleryItems = document.querySelectorAll('.gallery-item img');
-        
+
         let currentIndex = 0;
         const totalImages = galleryItems.length;
-        
+
         // Agregar evento click a cada imagen
         galleryItems.forEach((img, index) => {
-            img.onclick = function() {
+            img.onclick = function () {
                 currentIndex = index;
                 modal.style.display = "block";
                 modalImg.src = this.src;
                 captionText.innerHTML = this.alt;
             }
         });
-        
+
         // Función para cambiar de imagen
         function changeSlide(n) {
             currentIndex += n;
-            
+
             // Circular la navegación
             if (currentIndex >= totalImages) {
                 currentIndex = 0;
@@ -309,25 +321,25 @@
             if (currentIndex < 0) {
                 currentIndex = totalImages - 1;
             }
-            
+
             modalImg.src = galleryItems[currentIndex].src;
             captionText.innerHTML = galleryItems[currentIndex].alt;
         }
-        
+
         // Cerrar modal
-        closeBtn.onclick = function() {
+        closeBtn.onclick = function () {
             modal.style.display = "none";
         }
-        
+
         // Cerrar modal haciendo clic fuera de la imagen
-        modal.onclick = function(event) {
+        modal.onclick = function (event) {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         }
-        
+
         // Navegación con teclado
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (modal.style.display === "block") {
                 if (e.key === "ArrowLeft") {
                     changeSlide(-1);
@@ -340,4 +352,5 @@
         });
     </script>
 </body>
+
 </html>
