@@ -251,9 +251,6 @@
             <img src="./assets/IMG_4536.JPG">
         </div>
         <div class="gallery-item">
-            <img src="./assets/IMG_4539.JPG">
-        </div>
-        <div class="gallery-item">
             <img src="./assets/IMG_4542.JPG">
         </div>
         <div class="gallery-item">
@@ -264,15 +261,6 @@
         </div>
         <div class="gallery-item">
             <img src="./assets/IMG_4554.JPG">
-        </div>
-        <div class="gallery-item">
-            <img src="./assets/IMG_4576 (1).JPG">
-        </div>
-        <div class="gallery-item">
-            <img src="./assets/IMG_4577.JPG">
-        </div>
-        <div class="gallery-item">
-            <img src="./assets/IMG_4578.JPG">
         </div>
     </div>
 
@@ -286,8 +274,15 @@
     </div>
 
     <div class="toten3a">
-        <a class="b2" href="index.html">Volver</a>
+        <a class="b2" id="goBackLink">Volver</a>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = window.location.search;
+            document.getElementById('goBackLink').href = 'index.html' + params;
+        });
+    </script>
 
     <script>
         // Obtenemos todos los elementos necesarios
